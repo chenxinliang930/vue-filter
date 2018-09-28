@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/sousuo.css" />
+		<script src="js/jquery-1.11.0.js"></script>
+		<script src="js/vue.js"></script>
+
+	</head>
+
+	<body>
+		<div id="main" v-cloak>
+			<div class="bar">
+				<input type="text" v-model="searchString" placeholder="搜索">
+			</div>
+			<ul>
+				<li v-for="i in articles | searchFor searchString">
+					<a v-bind:href="i.url">
+						<img v-bind:src="i.image" alt="">
+					</a>
+					<p>{{i.title}}</p>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+	<script src="js/sousuo.js"></script>
+
+</html>
